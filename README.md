@@ -10,4 +10,4 @@ fn main() {
 }
 ```
 
-Gives you: thread 'main' panicked at '-1 is out of range for type u32 (TryFromIntError(()))', src/main.rs:19:13
+Gives you: thread 'main' panicked at '-1 is out of range for type u32: TryFromIntError(())', src\main.rs:4:26
