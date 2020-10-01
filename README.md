@@ -1,6 +1,6 @@
 # assert_into
 
-For when writing .try_into().unwrap() feels to long.
+For when writing .try_into().unwrap() feels too long.
 
 ```rust
 fn main() {
