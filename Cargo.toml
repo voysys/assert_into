@@ -1,0 +1,13 @@
+[package]
+name = "assert_into"
+version = "1.0.0"
+authors = ["Jonathan Nilsson <jonathan@voysys.se>"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "For when writing .try_into().unwrap() feels to long"
+repository = "https://github.com/voysys/assert_into"
+documentation = "https://docs.rs/assert_into"
+keywords = ["convert", "assert", "error"]
+readme = "README.md"
+
+[dependencies]
