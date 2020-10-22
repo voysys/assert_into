@@ -1,9 +1,5 @@
 #![no_std]
-#![allow(clippy::expect_fun_call)]
 
-extern crate alloc;
-
-use alloc::format;
 use core::{any::type_name, convert::TryFrom, fmt::Debug};
 
 pub trait AssertInto<T>: Sized {
@@ -20,10 +16,18 @@ where
     #[inline]
     #[track_caller]
     fn assert_into(self) -> U {
-        U::try_from(self).expect(&format!(
-            "{:?} is out of range for type {}",
-            self,
-            type_name::<U>(),
-        ))
+        let v = U::try_from(self);
+
+        match v {
+            Ok(v) => v,
+            Err(e) => {
+                panic!(
+                    "{:?} is out of range for type {}: {:?}",
+                    self,
+                    type_name::<U>(),
+                    e
+                );
+            }
+        }
     }
 }
